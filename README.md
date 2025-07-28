@@ -1,4 +1,4 @@
-# RIDE-CANCELLATIONS MODEL ANALYSIS
+# RIDE-CANCELLATIONS - MODEL ANALYSIS
 
 <p align="center">
   <img src="ride.jpg" width="600"/>
