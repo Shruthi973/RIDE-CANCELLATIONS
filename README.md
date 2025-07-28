@@ -1,5 +1,11 @@
-# RIDE-CANCELLATIONS
-MODEL ANALYSIS
+# RIDE-CANCELLATIONS MODEL ANALYSIS
+
+<p align="center">
+  <img src="ride.jpg" width="600"/>
+  <br>
+  <em>🧠 RIDE CANCELLED
+</p>
+
 # 🚖 Ride Cancellation Prediction – San Francisco Auto Rental (SAR)
 
 This project analyzes 10,000+ historical car rental bookings from SAR to develop machine learning models that predict ride cancellations. The solution aims to improve customer satisfaction and operational efficiency by identifying cancellation patterns and proactively managing high-risk bookings.
