@@ -3,7 +3,7 @@
 <p align="center">
   <img src="ride.jpg" width="600"/>
   <br>
-  <em>🧠 RIDE CANCELLED
+  <em>  RIDE CANCELLED
 </p>
 
 # 🚖 Ride Cancellation Prediction – San Francisco Auto Rental (SAR)
