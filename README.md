@@ -8,81 +8,108 @@
 
 # 🚖 Ride Cancellation Prediction – San Francisco Auto Rental (SAR)
 
-This project analyzes 10,000+ historical car rental bookings from SAR to develop machine learning models that predict ride cancellations. The solution aims to improve customer satisfaction and operational efficiency by identifying cancellation patterns and proactively managing high-risk bookings.
+Predicting whether a booked ride will be cancelled before it happens.  
+This end-to-end machine learning project leverages **Python-first modeling** on 10,000+ car rental bookings to help SAR reduce driver-related cancellations and optimize operational planning.
 
 ---
 
-## 🧠 Project Overview
+## 🧠 Problem Statement
 
-- **Client**: San Francisco Auto Rental (SAR)
-- **Problem**: ~20% of scheduled rides were being cancelled by drivers
-- **Goal**: Predict ride cancellations with 90%+ accuracy to improve service reliability and driver allocation
+San Francisco Auto Rental (SAR) reported ~20% of rides getting cancelled by drivers, affecting customer satisfaction and operations.
 
----
-
-## 🔧 Tools & Libraries
-
-- **Language**: R  , Python
-- **Packages**: `dplyr`, `ggplot2`, `caret`, `mice`, `randomForest`, `rpart`, `DMwR`, `lubridate`
-- **Techniques**: Imputation (KNN, MICE), Outlier Handling, Chi-Square Test, Feature Engineering, Logistic Regression (Lasso), Decision Tree, KNN, Random Forest
+**Goal:**  
+Build an accurate classification model to predict ride cancellations **with >90% accuracy** and support real-time intervention.
 
 ---
 
-## 🔍 Key Highlights
+## 🧰 Tech Stack
 
-- **Data Source**: SAR’s 2013 booking data (10,000 records, 19 attributes)
-- **Data Cleaning**:
-  - Missing geo-coordinates and distance filled using KNN and MICE
-  - Feature engineering with distance (Haversine), time features, booking channels
-  - Date-time transformations and POSIX conversions
-- **EDA**:
-  - Mobile bookings had the **lowest cancellation rate** (0.7%)
-  - Highest cancellations at **9 PM–10 PM**, especially on **Sundays**
-  - Top 10 vehicles & user behaviors explored
+### 💻 Primary Language: Python
+
+- `pandas`, `numpy`
+- `scikit-learn`
+- `imblearn` (oversampling)
+- `matplotlib`, `seaborn`
+- `geopy` (Haversine distance)
+- `datetime`, `warnings`
+
+### 📊 R (only for early EDA/imputation)
+
+- `dplyr`, `ggplot2`
+- `mice`, `DMwR`, `lubridate`
 
 ---
 
-## 🤖 Model Performance
+## 🧪 Modeling Techniques (Python)
 
-| Model              | Accuracy | Specificity | Sensitivity |
-|-------------------|----------|-------------|-------------|
-| Logistic Regression (LASSO) | 92.5%   | 5.97%       | 99.75%      |
-| Decision Tree      | 91.0%   | 15.67%      | 97.25%      |
-| K-Nearest Neighbors| 92.3%   | 13.9%       | 98.6%       |
-| Random Forest (✅ Best) | **93.3%** | **18.6%**     | **99.2%**     |
+| Model                  | Accuracy | Sensitivity | Specificity |
+|------------------------|----------|-------------|-------------|
+| Logistic Regression (L1) | 92.5%  | 99.75%     | 5.97%       |
+| Decision Tree          | 91.0%    | 97.25%      | 15.67%      |
+| K-Nearest Neighbors    | 92.3%    | 98.6%       | 13.9%       |
+| **Random Forest ✅**   | **93.3%**| **99.2%**    | **18.6%**   |
 
-✅ **Best Model**: Random Forest with class balancing via oversampling
+> ✅ **Best model**: `RandomForestClassifier` (Python), with class balancing using `imblearn.oversample.RandomOverSampler`
+
+---
+
+## 🔧 Feature Engineering
+
+- **Haversine distance** between pickup/dropoff locations (`geopy`)
+- **Time features**: hour of day, day of week, booking delay
+- **Categorical features**: booking channel, vehicle ID
+- **Behavioral patterns**: user frequency, weekend booking flag
+
+---
+
+## 🔍 Exploratory Insights (via Python & R)
+
+- **Mobile app bookings** had the **lowest cancellation rate (~0.7%)**
+- Cancellations **peak on Sundays at 9–10 PM**
+- Specific vehicles and time windows contributed to higher risks
+
+---
+
+## 📂 Repository Contents
+
+| File | Description |
+|------|-------------|
+| `ride_model_pipeline.ipynb` | Complete Python modeling pipeline |
+| `EDA_cleaning.R` | Early-stage EDA and imputation (optional) |
+| `SAR_Rental.csv` | Synthetic sample dataset (10,000 records) |
+| `presentation_SAR.pptx` | Business stakeholder slide deck |
+| `SAR_doc_full.pdf` | Full technical documentation |
+
+---
+
+## 🚀 Future Roadmap
+
+- [ ] Apply SMOTE/ADASYN for deeper class imbalance mitigation
+- [ ] Deploy final model as REST API for real-time cancellation alerts
+- [ ] Build Streamlit dashboard to visualize booking risk in real time
+- [ ] Monitor drift in booking behavior across seasons
 
 ---
 
 ## 📈 Business Impact
 
-- Estimated **$150K–$250K annual savings** by reducing cancellation rates
-- Insights support targeted driver incentives and smarter booking flows
-- Recommends enhanced mobile app features due to lowest cancel rate
+- Estimated annual savings: **$150K–$250K** through proactive cancellation reduction
+- Enables **smarter driver dispatch** and **targeted user incentives**
+- Reinforces importance of **mobile booking flows** in reducing churn
 
 ---
 
-## 📂 Files Included
+## 🔑 Tags & Keywords
 
-- `SAR_SHRUTHI.docx`: Full technical documentation of the workflow
-- `SAR_SHRUTHI.pptx`: Final business-facing presentation with results
-- `SAR_Rental.csv`: Raw dataset (synthetic sample)
-- R Script (Coming Soon): Modeling + EDA + Feature Engineering pipeline
+`Machine Learning`, `Python`, `Random Forest`, `Logistic Regression`, `Ride Cancellations`, `Geospatial Modeling`, `Operational Forecasting`, `scikit-learn`, `pandas`, `EDA`, `Haversine`, `Classification`, `Time Features`, `Imbalanced Data`, `Real-World ML`
 
 ---
 
-## 🚀 Future Work
+## 🙋‍♀️ About the Author
 
-- Address class imbalance using SMOTE
-- Deploy model into real-time booking system (API-based)
-- Develop alert system for high-risk booking interventions
-
----
-
-## 🔑 Keywords
-
-`R`, `Random Forest`, `Logistic Regression`, `KNN`, `Cancellations`, `Geospatial Modeling`, `Predictive Analytics`, `Booking Behavior`, `Time Series Features`, `Imputation`, `Operational Forecasting`
+**Shruthi Reddy Vudem**  
+AI/ML Researcher | Data Scientist | Builder of real-world models that drive impact  
+[LinkedIn](https://linkedin.com/in/shruthivudem) · [GitHub](https://github.com/shruthivudem)
 
 ---
 
