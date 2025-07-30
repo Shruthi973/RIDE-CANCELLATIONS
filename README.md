@@ -74,11 +74,14 @@ Build an accurate classification model to predict ride cancellations **with >90%
 
 | File | Description |
 |------|-------------|
-| `ride_model_pipeline.ipynb` | Complete Python modeling pipeline |
-| `EDA_cleaning.R` | Early-stage EDA and imputation (optional) |
-| `SAR_Rental.csv` | Synthetic sample dataset (10,000 records) |
-| `presentation_SAR.pptx` | Business stakeholder slide deck |
-| `SAR_doc_full.pdf` | Full technical documentation |
+| `README.md` | Project documentation |
+| `SAR_Cancellation_Analysis.ipynb` | Final Python notebook – full ML pipeline |
+| `SAR_PYTHON_ipynb_notebook` | Intermediate Colab notebook (Python) |
+| `sar_code.R` | Optional EDA and imputation in R |
+| `SAR_Cleaned_Median.csv` | Cleaned dataset used for modeling |
+| `SAR_SHRUTHI (1).docx` | Full technical report with results |
+| `SAR_SHRUTHI.pptx` | Business-facing presentation slides |
+| `ride.jpg` | Sample project visual (EDA or chart) |
 
 ---
 
